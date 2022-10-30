@@ -10,24 +10,23 @@ public class GetFromExternalAPI {
 
     private String url;
 
-    public GetFromExternalAPI(String s){
-        url = s;
+    public GetFromExternalAPI(String url){
+        this.url = url;
     }
     public GetFromExternalAPI(){}
 
-    public String getFromUrl() throws IOException {
+    public ResponseBody getFromUrl() throws IOException {
         final OkHttpClient client = new OkHttpClient();
+        System.out.println("url to get from : " + url);
         Request request = new Request.Builder().url(url).build();
         try {
             Response response = client.newCall(request).execute();
             assert response.isSuccessful();
-            return response.body().string();
+            return response.body();
         }
         catch (Exception e){
             System.out.println("error in getFromUrl : " + e);
             throw e;
         }
     }
-
-
 }
