@@ -33,7 +33,9 @@ public class AllControllers {
         }
         catch (Exception e){
             Map<String, Object> map = new HashMap<>();
-            map.put("error", e.getMessage());
+            map.put("data", e.getMessage());
+            map.put("code", 1);
+            map.put("message", "error");
             return map;
         }
     }
