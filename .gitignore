@@ -1,2 +1,5 @@
 currency-converter-ui/node_modules/*
 currency-converter-ui/node_modules
+*/.env
+*/.mvn
+*/.mvn/*
