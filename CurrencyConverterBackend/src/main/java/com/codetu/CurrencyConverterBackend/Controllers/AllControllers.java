@@ -14,7 +14,11 @@ public class AllControllers {
     @GetMapping("/currencies")
     public Map<String, Object> getListOfCurrencies() {
         GetDataFromExchange.getCurrencies();
-        return GetDataFromExchange.currenciesList = new Parser(GetDataFromExchange.getResult()).getJsonFromString();
+        Map<String, Object> map = new HashMap<>();
+        map.put("data", GetDataFromExchange.currenciesList = new Parser(GetDataFromExchange.getResult()).getJsonFromString());
+        map.put("code", 0);
+        map.put("message", "success");
+        return map;
     }
 
     @GetMapping(value = "/convertFrom", produces = "application/json")
