@@ -3,3 +3,4 @@ currency-converter-ui/node_modules
 */.env
 */.mvn
 */.mvn/*
+CurrencyConverterBackend/.env
