@@ -2,6 +2,7 @@ package com.codetu.CurrencyConverterBackend.Controllers;
 
 import com.codetu.CurrencyConverterBackend.Models.Converter;
 import com.codetu.CurrencyConverterBackend.Models.Parser;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000/"})
 public class AllControllers {
     @GetMapping("/currencies")
     public Map<String, Object> getListOfCurrencies() {
